@@ -112,16 +112,17 @@
             allowClear: true
         });
 
-        $('#is_member').on('change', function () {
+         $('#is_member').on('change', function () {
             if ($(this).val() === "yes") {
                 $('#member_selection').fadeIn();
+                $('#member_phone').prop('required', true);
             } else {
                 $('#member_selection').fadeOut();
+                $('#member_phone').prop('required', false); 
                 $('#member_phone').val(null).trigger('change');
             }
         });
-
-        $('#total_pay').on('input', function() {
+                $('#total_pay').on('input', function() {
             let value = $(this).val().replace(/\D/g, '');
             $('#total_pay_numeric').val(value);
             if (value) {

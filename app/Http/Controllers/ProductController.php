@@ -59,6 +59,10 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         return view('products.edit', compact('product'));
+        // Di controller, sebelum menyimpan data ke database
+        $rawPrice = str_replace(['Rp', '.', ','], '', $request->input('price')); // Menghapus simbol dan pemisah
+        $price = (int) $rawPrice;  // Mengonversi string menjadi angka
+
     }
 
     public function update(Request $request, Product $product)

@@ -51,7 +51,7 @@
 
                                 <div class="form-group mb-3">
                                     <label for="price">Harga</label>
-                                    <input type="text" class="form-control" name="price_display" id="price_display" placeholder="Harga Produk" value="{{ old('price', $product->price) }}" required>
+                                    <input type="text" class="form-control" name="price_display" id="price_display" placeholder="Harga Produk" required>
                                     <input type="hidden" name="price" id="price" value="{{ old('price', $product->price) }}">
                                 </div>
 

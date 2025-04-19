@@ -2,7 +2,6 @@
 
 @section('title', 'Dashboard')
 
-
 @section('content')
 <div class="main-content-table">
     <section class="section">
@@ -13,6 +12,7 @@
                 </div>
 
                 <div class="row mt-4">
+                    <!-- Produk -->
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-statistic-1">
                             <div class="card-icon bg-success text-white">
@@ -28,7 +28,8 @@
                             </div>
                         </div>
                     </div>
-
+                
+                    <!-- Penjualan -->
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-statistic-1">
                             <div class="card-icon bg-warning text-white">
@@ -39,12 +40,14 @@
                                     <h4>Penjualan</h4>
                                 </div>
                                 <div class="card-body">
-                                    {{ $salesCount }}
+                                    <p><strong>Member:</strong> {{ $salesMemberCount }} Penjualan</p>
+                                    <p><strong>Non-Member:</strong> {{ $salesNonMemberCount }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                
+                    <!-- User (Hanya untuk Superadmin) -->
                     @if (auth()->user()->role == 'superadmin')
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-statistic-1">
@@ -62,7 +65,8 @@
                         </div>
                     </div>
                     @endif
-
+                
+                    <!-- Member -->
                     <div class="col-lg-3 col-md-6">
                         <div class="card card-statistic-1">
                             <div class="card-icon bg-danger text-white">
@@ -78,6 +82,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
                 </div>
 

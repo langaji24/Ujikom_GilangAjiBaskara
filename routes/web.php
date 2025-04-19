@@ -51,11 +51,14 @@ Route::middleware(['authenticate'])->group(function () {
         Route::put('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
     });
     
-    // User Route
+
     Route::middleware(['user'])->group(function () {    
         
         Route::post('/confirm-sale', [SaleController::class, 'confirmationStore'])->name('sales.confirmationStore');
         // Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     });
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
+
 
